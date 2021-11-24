@@ -3,9 +3,9 @@ function assertEqual(actual, expected) {
   let valueB = expected;
 
   if (valueA === valueB) {
-    console.log("\uD83D\uDE00 \uD83D\uDE00 \uD83D\uDE4F Assertion Passed: [actual] === [expected]");
+    console.log(`\uD83D\uDE00 \uD83D\uDE00 \uD83D\uDE4F Assertion Passed: ${valueA} === ${valueB}`);
   } else {
-    console.log("Assertion Failed: [actual] !=== [expected]");
+    console.log(`Assertion Failed: ${valueA} !=== ${valueB}`);
   }
 
 }
