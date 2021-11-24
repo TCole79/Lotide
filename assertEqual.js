@@ -7,7 +7,6 @@ function assertEqual(actual, expected) {
   } else {
     console.log(`Assertion Failed: ${valueA} !=== ${valueB}`);
   }
-
 }
 
 // test code:
@@ -16,5 +15,5 @@ assertEqual("zim", "zim");
 assertEqual("zim", "zimmer");
 assertEqual(613, 613);
 
-//let emoji = String.fromCodePoint(0x1F621)
+//let emoji = String.fromCodePoint(0x1F621) this is angry emoji code I don't know how to use
 //"\uD83D\uDE00"

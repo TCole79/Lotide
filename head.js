@@ -1,4 +1,4 @@
-function assertEqual(actual, expected) {
+ function assertEqual(actual, expected) {
   let valueA = actual;
   let valueB = expected;
 
