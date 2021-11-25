@@ -1,6 +1,3 @@
-//const eqArrays = require("./eqArrays"); // is this code enabling me to pull eqArrays without adding in all the code?
-//const assertArraysEqual = require("./assertArraysEqual");   // as above question?
-
 /* assertEqual function code
 function assertEqual(actual, expected) {
   let valueA = actual;
@@ -12,12 +9,14 @@ function assertEqual(actual, expected) {
     console.log(`:octagonal_sign: Assertion Failed: ${valueA} !=== ${valueB}`);    // first use of code with octagonal
   }
 }
-// test code for assertEqual:
+*/
+/* test code for assertEqual:
 assertEqual("Lighthouse Labs", "Bootcamp");
 assertEqual("zim", "zim");
 assertEqual("zim", "zimmer");
 assertEqual(613, 613); */
 
+/////////////////
 /*
 // Implement a function eqArrays which takes in two arrays and returns true or false, based on a perfect match.
 function eqArrays(array1, array2) {
@@ -31,7 +30,6 @@ function eqArrays(array1, array2) {
   } return true;
 }
 */
-
 /* test code for eqArrays:
 console.log(eqArrays([1, 2, 3], [1, 2, 3])); // => true
 console.log(eqArrays([1, 2, 3], [3, 2, 1])); // => false
@@ -41,11 +39,12 @@ console.log(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
 // See this link: https://www.w3docs.com/snippets/javascript/how-to-compare-two-javascrpt-arrays.html for more ideas on how to compare.
 */
 
+//////////////////
 /*
 Implement assertArraysEqual which will take in two arrays and console.log an appropriate message to the console.
 The message will be similar to that of assertEqual. In fact, you could refer to the code for assertEqual to help you implement this. Instead of doing a simple === check though, this assertion function will make use of your eqArrays function for array comparison.
 */
-/*
+
 // lint did not like this next section when I used: function assertEqualArrays(array1, array2) - it wanted me to change the function expression
 const assertArraysEqual = function(array1, array2) {
 
@@ -63,53 +62,41 @@ const assertArraysEqual = function(array1, array2) {
   return true;
 };
 console.log(assertArraysEqual([1, 2, 3] , [1, 2, 3]), true);
-*/
+
+
+///////////////////// Implement a function called letterPositions.
 /*
-Implement middle which will take in an array and return the middle-most element(s) of the given array.
-The middle function should return an array with only the middle element(s) of the provided array. This means that the length of the returned elements could vary.
-Write test assertions for the various scenarios with middle
-We can and should use the assertArraysEqual function for testing our new function. That's why we brought it in here to begin with.
+This challenge is similar to countLetters and allows us to spend some more time solving problems with objects.
+
+We'll implement a new function letterPositions which will return all the indices (zero-based positions) in the string where each character is found.
+
+For each letter, instead of returning just one number to represent its number of occurrences, multiple numbers may be needed to represent all the places in the string that it shows up.
 */
+// process steps
+// define function and set argument
+// create empty working object
+// loop through object, returning the indices count of each string element found
+// if a string letter is encountered more than once, add this to the key instead of incrementing the key value total
 
-//process steps
-// define middle function
-// create working array to hold the values
-// use for of loop to go through working array
-// if array length is 1 or 2 return empty array
-// if array length is more than 2 and an odd number, return the middle element
-// if array length is more than 2 and an even number, return middle two elements
+const letterPositions = function (sentence) {
+  let results = {};
 
+  for (let i = 0; i < sentence.length; i++) {
+    let position = i;
+    let letter = sentence[i];
 
-const middle = function(array) {
-  let workingArr = [];
-//  const workingArr = ((array.length - 1) / 2); // does this find the mid point? 
-//console.log("define working array -> ", workingArr);
-  const midIndex = Math.floor(array.length / 2);
+    if (letter !== ' ') {
 
-  if (array.length <= 2) {
-    return workingArr;
-  } 
-  
-  if (array.length % 2 === 0) {
-    workingArr = array.slice(midIndex - 1, midIndex + 1);
-    return workingArr;
+      if (results[letter]) {
+        results[letter].push(i);
+      } else {
+        results[letter] = [i];
+      }
+    }
   }
+  return results;
+};
+console.log(letterPositions("lighthouse in the house"));
+console.log(letterPositions("Hello there"));
+console.log(letterPositions("Hello"));
 
-  if (array.length % 2 !== 0) {
-    workingArr = array.slice(midIndex, midIndex + 1);
-    return workingArr;
-  }
-}
-
-//test code:
-//For arrays with one or two elements, there is no middle. Return an empty array.
-console.log(middle([1])); // => []
-console.log(middle([1, 2])); // => []
-
-//For arrays with odd number of elements, an array containing a single middle element should be returned.
-console.log(middle([1, 2, 3])); // => [2]
-console.log(middle([1, 2, 3, 4, 5])); // => [3]
-
-//For arrays with an even number of elements, an array containing the two elements in the middle should be returned
-console.log(middle([1, 2, 3, 4])); // => [2, 3]
-console.log(middle([1, 2, 3, 4, 5, 6])); // => [3, 4]

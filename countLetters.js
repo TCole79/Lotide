@@ -44,4 +44,27 @@ const countLetters = function(sentence) {
   return workingOb;
 }
 // test conditions:
-console.log(countLetters("Hello Fred"));
+console.log(countLetters("lighthouse in the house"));
+
+
+/* Gary's code for comparison which I don't fully understand yet
+const countLetters = function(arr) {
+  let count = 0;
+  let characters = new Map();
+  for (const key of arr) {
+    if (key !== ' ')
+      characters.set(key, count);     //initialized each character in the string  console.log(characters) works
+  }
+
+  for (const key of arr) {           //count the # of times that the character occurs
+    let count = characters.get(key);
+    if (key !== ' ')                        //gets rid of the space character
+      characters.set(key, count + 1);
+
+    for (const [key, value] of characters) {    //output
+      console.log([key, value]);
+    }
+  }
+};
+countLetters("lighthouse in the house");
+*/
