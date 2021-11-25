@@ -47,7 +47,7 @@ const countLetters = function(sentence) {
 console.log(countLetters("lighthouse in the house"));
 
 
-/* Gary's code for comparison which I don't fully understand yet
+/* Gary's code for comparison which I don't fully understand yet as he uses map
 const countLetters = function(arr) {
   let count = 0;
   let characters = new Map();

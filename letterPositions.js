@@ -79,9 +79,9 @@ For each letter, instead of returning just one number to represent its number of
 // if a string letter is encountered more than once, add this to the key instead of incrementing the key value total
 
 const letterPositions = function (sentence) {
-  let results = {};
+  let results = {};   // my working object
 
-  for (let i = 0; i < sentence.length; i++) {
+  for (let i = 0; i < sentence.length; i++) {   // standard for loop
     let position = i;
     let letter = sentence[i];
 
