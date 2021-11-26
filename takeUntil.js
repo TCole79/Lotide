@@ -4,15 +4,17 @@
     The callback (which Lodash calls "predicate") */
 
 const takeUntil = function(array, callback) {
-  let result = [];  // declaring empty array
-  for (let item of array) {   // for of loop
-    if (callback(item)) {   // 
-      result = array.slice(0, array.indexOf(item));
+  let result = [];
+
+  for (let item of array) {
+  if (!callback(item)) {
+    result.push(item);
+    } else {
+    break;
     }
   }
   return result;
 };
-
 
 // Expected input:
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
@@ -29,3 +31,14 @@ console.log(results2);
 [ 1, 2, 5, 7, 2 ]
 ---
 [ 'I\'ve', 'been', 'to', 'Hollywood' ] */
+
+// Ratul's example - I don't understand the slice line
+// const takeUntil = function(array, callback) {
+//   let result = [];  // declaring empty array
+//   for (let item of array) {   // for of loop
+//     if (callback(item)) {   // 
+//       result = array.slice(0, array.indexOf(item));
+//     }
+//   }
+//   return result;
+// };
