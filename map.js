@@ -46,15 +46,13 @@ console.log(
   ])
 );
 
-// const word = words.map(function => {
-
-// })
-
-/*Answers:
-const results1 = (words) => {
-  return words;
+const assertArraysEqual = function(array1, array2) {
+  if (eqArrays(array1, array2) === true) {
+    console.log(`✅✅✅ Assertion Passed: ${array1} === ${array2}`);
+  } else {
+    console.log(`🛑🛑🛑 Assertion Failed: ${array1} !== ${array2}`);
+  }
 };
-
-console.log(results1(words))
-;*/
-
+// test code:
+assertArraysEqual(map(["Lighthouse", "Lab", "Bootcamp"], item => item[0]), ['L', 'L', 'B']);
+assertArraysEqual(map(["Canada", "Bangladesh", "India", "Greece", "Spain"], item => item[0]), ["C", "B", "I", "G", "S"]);

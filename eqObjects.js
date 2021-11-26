@@ -1,25 +1,23 @@
-function assertEqual(actual, expected) {
+/* assertEqual code:
+const assertEqual = function(actual, expected) {
   let valueA = actual;
   let valueB = expected;
 
   if (valueA === valueB) {
     console.log(`\uD83D\uDE00 \uD83D\uDE00 \uD83D\uDE4F Assertion Passed: ${valueA} === ${valueB}`);
   } else {
-    console.log(`Assertion Failed: ${valueA} !== ${valueB}`);
+    console.log(`Assertion Failed: ${valueA} !=== ${valueB}`);
   }
 }
-
-// test code:
-/*
+// test code for asserEqual:
 assertEqual("Lighthouse Labs", "Bootcamp");
 assertEqual("zim", "zim");
 assertEqual("zim", "zimmer");
 assertEqual(613, 613); */
-
 //let emoji = String.fromCodePoint(0x1F621) this is angry emoji code I don't know how to use
-//"\uD83D\uDE00"
 
-function eqArrays(array1, array2) {
+/* eqArrays code
+const eqArrays = function(array1, array2) {
 
   if (array1.length !== array2.length) { //if the arrays are not equal in length return false immediately
     return false;
@@ -30,6 +28,7 @@ function eqArrays(array1, array2) {
     }
   } return true;
 }
+*/
 
 ///////////////
 /* Step 1: Function Definition

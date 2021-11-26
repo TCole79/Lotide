@@ -1,4 +1,5 @@
-function assertEqual(actual, expected) {
+//function assertEqual(actual, expected) { // this is other way to declare a function
+const assertEqual = function(actual, expected) {
   let valueA = actual;
   let valueB = expected;
 
@@ -7,14 +8,12 @@ function assertEqual(actual, expected) {
   } else {
     console.log(`Assertion Failed: ${valueA} !=== ${valueB}`);
   }
+};
 
-}
-
-function tail(array) {
-//let newArray = array.slice(1);
-//return newArray;
+// function tail(array) { another way to declare a function
+const tail = function(array) {
   return array.slice(1);
-}
+};
 
 //[1, 2, 3] === [1, 2, 3] // => false
 //[1, 2, 3] == [1, 2, 3]; // => false

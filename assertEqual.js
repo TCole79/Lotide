@@ -1,4 +1,5 @@
-function assertEqual(actual, expected) {
+//function assertEqual(actual, expected) { // this is other way to declare a function
+const assertEqual = function(actual, expected) {
   let valueA = actual;
   let valueB = expected;
 

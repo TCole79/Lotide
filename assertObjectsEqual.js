@@ -50,9 +50,9 @@ const eqObjects = function (object1, object2) {
     return false;
   }
 
-  for (let key in arr1) {
-    arr1[key] !== arr2[key]
-  }
+  //for (let key in arr1) {
+  //  arr1[key] !== arr2[key]
+  //}
 
   for (let value of arr1) {
     console.log(object1[value[0]] !== object2[value[0]]);
