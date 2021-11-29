@@ -64,6 +64,7 @@ const assertArraysEqual = function(array1, array2) {
 };
 console.log(assertArraysEqual([1, 2, 3] , [1, 2, 3]), true);
 */
+
 /*
 Implement middle which will take in an array and return the middle-most element(s) of the given array.
 The middle function should return an array with only the middle element(s) of the provided array. This means that the length of the returned elements could vary.
@@ -79,26 +80,28 @@ We can and should use the assertArraysEqual function for testing our new functio
 // if array length is more than 2 and an odd number, return the middle element
 // if array length is more than 2 and an even number, return middle two elements
 
-
 const middle = function(array) {
   let workingArr = [];
-//  const workingArr = ((array.length - 1) / 2); // does this find the mid point? 
-//console.log("define working array -> ", workingArr);
-  const midIndex = Math.floor(array.length / 2);
-
+  //console.log(workingArr);
+  const middle = Math.floor(array.length / 2);
+  //console.log(midIndex);
+  
+//For arrays with one or two elements, there is no middle. Return an empty array.
   if (array.length <= 2) {
     return workingArr;
-  } 
+  } //console.log(workingArr);
   
+//For arrays with an even number of elements, an array containing the two elements in the middle should be returned
   if (array.length % 2 === 0) {
-    workingArr = array.slice(midIndex - 1, midIndex + 1);
+    workingArr = array.slice(middle - 1, middle + 1);
     return workingArr;
-  }
+  } //console.log(workingArr);
 
+//For arrays with odd number of elements, an array containing a single middle element should be returned.
   if (array.length % 2 !== 0) {
-    workingArr = array.slice(midIndex, midIndex + 1);
+    workingArr = array.slice(middle, middle + 1);
     return workingArr;
-  }
+  } //console.log(workingArr);
 }
 
 //test code:
@@ -108,8 +111,8 @@ console.log(middle([1, 2])); // => []
 
 //For arrays with odd number of elements, an array containing a single middle element should be returned.
 console.log(middle([1, 2, 3])); // => [2]
-console.log(middle([1, 2, 3, 4, 5])); // => [3]
+console.log(middle([1, 5, 3, 4, 2])); // => [3]
 
 //For arrays with an even number of elements, an array containing the two elements in the middle should be returned
 console.log(middle([1, 2, 3, 4])); // => [2, 3]
-console.log(middle([1, 2, 3, 4, 5, 6])); // => [3, 4]
+console.log(middle([2, 1, 3, 4, 5, 6])); // => [3, 4]

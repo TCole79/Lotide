@@ -26,9 +26,7 @@ Before implementing this function, we need to think about how it will report bac
 Process steps:
 declare function countLetters to accept a string
 loop through the string, adding each individual letter to an object as a key, and add 1 to the value of that key for each letter (key) of that type
-return the object list with keys (letter type) and value (number of times that letter was included)
-
-*/
+return the object list with keys (letter type) and value (number of times that letter was included) */
 
 const countLetters = function(sentence) {
   let workingOb = {};
@@ -36,8 +34,10 @@ const countLetters = function(sentence) {
   for (const sent of sentence) {
     if (workingOb[sent]) {
       workingOb[sent] += 1;
+      console.log(workingOb);
     } else {
       workingOb[sent] = 1;
+      console.log(workingOb);
     }
   } console.log("for comment -> ", workingOb);
   
@@ -66,5 +66,5 @@ const countLetters = function(arr) {
     }
   }
 };
-countLetters("lighthouse in the house");
-*/
+
+countLetters("lighthouse in the house"); */

@@ -33,7 +33,6 @@ const assertObjectsEqual = function(actual, expected) {
   // 
   const inspect = require('util').inspect; // <= add this line
 
-
 };
 
 // Let's make use of the inspect function. Here is an example use of it to help you apply it in our function:

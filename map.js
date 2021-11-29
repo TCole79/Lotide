@@ -35,7 +35,6 @@ const whatever = function (value) {   // declaring 'whatever' function which acc
 
 console.log(map(words, whatever));    // to check at this point what the vlaue assigned to 'value' is
 
-
 console.log(
   eqArrays(map(words, whatever), [
     "I have ground",
