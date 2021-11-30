@@ -1,21 +1,3 @@
-/*
-const assertEqual = function(actual, expected) {
-  let valueA = actual;
-  let valueB = expected;
-
-  if (valueA === valueB) {
-    console.log(`\uD83D\uDE00 \uD83D\uDE00 \uD83D\uDE4F Assertion Passed: ${valueA} === ${valueB}`);
-  } else {
-    console.log(`:octagonal_sign: Assertion Failed: ${valueA} !=== ${valueB}`);
-  }
-};
-// test code for assertEqual:
-// assertEqual("Lighthouse Labs", "Bootcamp");
-// assertEqual("zim", "zim");
-// assertEqual("zim", "zimmer");
-// assertEqual(613, 613);
-*/
-
 // Implement a function eqArrays which takes in two arrays and returns true or false, based on a perfect match.
 const eqArrays = function(array1, array2) {
 
@@ -28,11 +10,5 @@ const eqArrays = function(array1, array2) {
     }
   } return true;
 };
-// test code for eqArrays:
-console.log(eqArrays([1, 2, 3], [1, 2, 3])); // => true
-console.log(eqArrays([1, 2, 3], [3, 2, 1])); // => false
-console.log(eqArrays(["1", "2", "3"], ["1", "2", "3"])); // => true
-console.log(eqArrays(["1", "2", "3"], ["1", "2", 3])); // => false
-console.log(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
 
-// See this link: https://www.w3docs.com/snippets/javascript/how-to-compare-two-javascrpt-arrays.html for more ideas on how to compare
+module.exports = eqArrays;
